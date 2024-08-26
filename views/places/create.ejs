@@ -1,0 +1,59 @@
+<% layout('layouts/app') %>
+    <h1>Add Place</h1>
+    <form action="/places" method="POST" class="m-3 pt-3 validated-form" novalidate enctype="multipart/form-data">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Tittle</span>
+            <input type="text" name="place[title]" id="title" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a tittle.
+                </div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+            <input type="text" name="place[description]" id="description" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a description.
+                </div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="number" name="place[price]" id="price" class="form-control" aria-label="Amount (to the nearest dollar)" required>
+            <span class="input-group-text">.00</span>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a price.
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
+            <input type="text" name="place[location]" id="location" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a location.
+                </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="file" name="image" id="image" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" multiple required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a image.
+                </div>
+        </div>
+        <button type="submit" class="btn btn-outline-success">Add Place</button>
+    </form>

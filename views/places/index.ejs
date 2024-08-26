@@ -1,0 +1,35 @@
+
+<% layout('layouts/app') %>
+
+<h1>All Places</h1>
+<br>
+<div class="row row-cols-1 row-cols-md-4 m-2">
+    <% for(const place of places) { %>
+        <div class="card p-3 h-100% mb-5">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <% place.images.forEach((image)=> { %>
+                        <div class="carousel-item <% if(place.images.indexOf(image) === 0) { %>active<% } %>"
+                            data-bs-interval="2000">
+                            <img src="/images/<%= place.images[0].filename %>" alt="<%= place.title %>" class="d-block w-100" alt="<%= place.title %>"
+                                style="object-fit: cover; height: 200px;">
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">
+                        <%= place.title %>
+                    </h5>
+                    <p class="card-text mb-3">
+                        <%= place.description %>
+                    </p>
+                </div>
+                <div class="mt-auto">
+                    <a href="/places/<%= place._id %>" class="btn btn-primary">Detail</a>
+                </div>
+            </div>
+        </div>
+        <% } %>
+</div>
