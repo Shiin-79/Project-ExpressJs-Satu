@@ -169,7 +169,7 @@ async function seedPlaces() {
     },
     {
       title: "Tanjung Lesung",
-      price: 100000,
+      price: 10000,
       description:
         "Kawasan wisata pantai di Banten yang cocok untuk bersantai dan berenang",
       location: "Tanjung Lesung, Pandeglang, Banten",
